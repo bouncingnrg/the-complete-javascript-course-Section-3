@@ -4,7 +4,7 @@
 //The biggest thing with hoisinting, is wer can decalre functions before we want to use them in our code
 
 //Functions
-calculateAge(1965); // will work because its a function declaration
+/*calculateAge(1965); // will work because its a function declaration
 
 function calculateAge (year) {
     console.log(2017 - year);
@@ -30,7 +30,7 @@ function foo(){
 
 foo(); // gets its own exacution context object
 console.log(age); // will return 23 - because the var age is stored in the global exacution context object
-
+*/
 
 ///////////////////////////////////////
 // Lecture: Scoping
@@ -51,13 +51,14 @@ function first() {
         console.log(a + b + c);
     }
 }
+
 */
 
 
 
 // Example to show the differece between execution stack and scope chain
 
-/*
+
 var a = 'Hello!';
 first();
 
@@ -73,9 +74,9 @@ function first() {
 
 function third() {
     var d = 'John';
-    console.log(a + b + c + d);
+    console.log(a+d); // will come back as undefined as the thrid function doesn't have acess to variable c because its not in the scape scope chain. The 'third' function only has access to the variables a&c
 }
-*/
+
 
 
 
