@@ -58,7 +58,7 @@ function first() {
 
 // Example to show the differece between execution stack and scope chain
 
-
+/*
 var a = 'Hello!';
 first();
 
@@ -77,17 +77,46 @@ function third() {
     console.log(a+d); // will come back as undefined as the thrid function doesn't have acess to variable c because its not in the scape scope chain. The 'third' function only has access to the variables a&c
 }
 
-
+*/
 
 
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+//console.log(this);
+/*
+calculateAge(1985);
 
+function calculateAge(year){
+    console.log(2017 - year);
+    console.log(this); // will return the window object as this is the gobal defult.
+}
+*/
 
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function(){
+    console.log(this); //this keyword reffers to the object that called the method i.e John object 
+    console.log(2017 -this.yearOfBirth);  
+    /*    
+    function innerFunction () {
+        console.log(this) // will return back to the window object,
+    }    
+        innerFunction();
+        */
+    }
+}
 
+john.calculateAge();
 
+var mike = {
+    name: 'Mike',
+    yearOfBirth: 1984
+};
 
+//method borrowing - borrow the method from john to use for mike
 
-
+mike.calculateAge = john.calculateAge;
+mike.calculateAge(); // still need to call the function
 
